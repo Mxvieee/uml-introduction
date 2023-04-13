@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor 申請者 #Beige;line:black;line.bold;
+actor 承認者 #YellowGreen;line:Pink;line.bold;
+actor 経理担当者 #Black;line:Blue;line.bold;
+actor 交通費精算システム #AA0000;line:Yellow;line.bold;
+rectangle 出張申請システム  {
+usecase 出張申請を登録する << U1 >>
+usecase 出張申請を提出する << U2 >>
+usecase 出張申請を承認する << U3 >>
+usecase 出張申請を却下する << U4 >>
+usecase 出張申請を差し戻す << U5 >>
+usecase 出張申請を確認する << U6 >>
+}
+申請者 --> 出張申請を登録する : 登録
+申請者 ---> 出張申請を提出する : 提出
+承認者 ---> 出張申請を承認する : 承認
+承認者 --> 出張申請を却下する : 却下
+承認者 --> 出張申請を差し戻す : 差し戻す
+承認者 --> 出張申請を確認する : 確認
+経理担当者 ---> 出張申請を確認する : 確認
+出張申請を登録する <--- 交通費精算システム : 登録
+@enduml
