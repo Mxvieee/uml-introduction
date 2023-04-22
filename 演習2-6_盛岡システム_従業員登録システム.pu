@@ -1,5 +1,5 @@
 @startuml ユースケース図
-' left to right direction
+left to right direction
 actor 人事担当者
 actor 社員
 rectangle 従業員システム{
@@ -11,5 +11,3 @@ usecase 社員情報を編集
 人事担当者 ---> 社員情報を編集
 人事担当者 --> 従業員登録
 人事担当者 --> 社員情報参照
-従業員登録 .> 社員情報参照 :<<include>>
-従業員登録 .> 社員情報を編集 :<<extend>>
