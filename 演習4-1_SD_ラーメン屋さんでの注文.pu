@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+Actor 客 as guest
+participant ":フロア定員" as clerk
+participant ":料理人" as cooker
+activate guest
+guest ->clerk:ラーメン注文
+activate clerk
+clerk -> cooker:調理指示
+activate cooker
+cooker -> cooker:料理
+deactivate cooker
+clerk <<-- cooker:ラーメン
+deactivate clerk
+guest <<-- clerk:ラーメン
+@enduml
