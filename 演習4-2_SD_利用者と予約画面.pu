@@ -1,11 +1,12 @@
-@startuml
- hide footbox
-participant ":検索画面" as seach
-participant ":検索コントローラ" as control
-
-activate seach
-seach ->> control: 検索情報取得（）
-deactivate control
-
-note right of seach : 非同期メッセージ
+@startuml 利用者、予約画面
+hide footbox
+participant "user:ログイン" as a
+participant ":予約画面" as b
+activate a
+a --> b:ログイン()
+activate b
+b -->b:確認()
+activate b
+deactivate a
+deactivate b
 @enduml
