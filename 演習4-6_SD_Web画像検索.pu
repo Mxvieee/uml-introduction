@@ -1,0 +1,23 @@
+@startuml 画像検索
+hide footbox
+actor ユーザ as user
+participant ":ブラウザ" as browse <<boundary>>
+participant ":WEBサーバー" as webserver <<entity>>
+participant ":画像サーバー" as photoserver  <<entity>>
+
+activate user
+user -> browse
+activate browse
+    browse -> webserver: 画像の呼び出し(画像ファイル名)
+    activate webserver
+   opt 画像ファイル発見
+    activate imageserver
+    webserver <-- imageserver : 閲覧状態
+    deactivate imageserver
+    end alt
+    browse <<-- webserver:画像の再生
+    deactivate webserver
+    user <<-- browse
+    deactivate user
+    deactivate browse
+@enduml 
