@@ -1,0 +1,18 @@
+@startuml 診察予約
+left to right direction
+actor 患者#DDDDDD;line:black;line.bold;
+actor 看護士#DDDDDD;line:Red;line.bold;
+
+rectangle 診察予約{
+    usecase 診察番号の表示
+    usecase 診察の予約
+    usecase 予約の確認
+    usecase 予約の取り消し
+}
+患者 --> 診察の予約
+患者 --> 予約の確認
+患者 ---> 予約の取り消し
+患者 ---> 診察番号の表示
+
+診察番号の表示 <--- 看護士
+@enduml
