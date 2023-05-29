@@ -1,0 +1,26 @@
+@startuml カレーライス
+start
+:材料を用意する;
+fork
+fork 
+:野菜を洗う;
+:野菜を切る;
+fork again
+:豚肉を焼く;
+end fork
+:鍋に水を入れる;
+:食材を煮込む;
+:ルーを入れる;
+:隠し味を入れる;
+note left
+チョコは
+溶かしてから
+入れる
+end note
+fork again
+:米を研ぐ;
+:米を炊く;
+end fork
+:皿に盛りつける;
+stop
+@enduml
