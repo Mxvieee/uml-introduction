@@ -1,0 +1,16 @@
+@startuml 自動販売機システム
+left to right direction
+actor 客
+actor ベンダー
+rectangle 自動販売機{
+    usecase ドリンクを運ぶ
+    usecase お金を入金
+    usecase ジュースを選ぶ
+    usecase ジュースを補充する
+}
+ジュースを補充する <-- ベンダー
+ドリンクを運ぶ <-- ベンダー
+客 --> お金を入金
+客 --> ジュースを選ぶ
+
+@enduml
